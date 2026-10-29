@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Noor Muchsin Ilham | Portofolio</title>
+<meta name="description" content="Portofolio mahasiswa Sistem Informasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f6; --surface:#ffffff; --ink:#14213d; --muted:#4d5b78;
+  --line:#c9d3e0; --accent:#2b4eff; --signal:#ffd60a;
+  --head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#0f1626; --surface:#18223a; --ink:#eef2f6; --muted:#a3b0c9;
+  --line:#2b3857; --accent:#7f98ff; --signal:#ffd60a;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(2rem,5vw,3rem)/1.1 var(--head);letter-spacing:-.02em;margin-bottom:1.5rem}
+p{max-width:62ch}
+
+/* Navigasi */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:1.25rem;height:3.5rem}
+nav .brand{font:700 1rem var(--head);text-decoration:none;margin-right:auto}
+nav a.link{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a.link:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.3rem .8rem;font:inherit;font-size:.9rem;cursor:pointer}
+
+/* Hero */
+.hero{padding:5rem 0 4rem;border-top:0}
+.hero h1{font:800 clamp(2.4rem,9vw,6rem)/.95 var(--head);letter-spacing:-.04em;margin-bottom:1.5rem}
+.hero h1 span{display:block}
+.hero h1 .second{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero .tag{font-size:1.2rem;color:var(--muted);max-width:44ch;margin-bottom:2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:999px;border:2px solid var(--ink);text-decoration:none;font-weight:500}
+.btn.primary{background:var(--signal);border-color:var(--signal);color:#14213d}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+/* About */
+.about{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;align-items:start}
+.photo{width:220px;height:260px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font:800 4rem var(--head);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1.25rem;margin:1.25rem 0;padding:1rem 0;border-block:1px solid var(--line)}
+dt{color:var(--muted)} dd{font-weight:500}
+
+/* Skill */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+.skill h3{font:700 1.25rem var(--head);margin-bottom:.5rem}
+.skill p{font-size:.98rem;color:var(--muted);margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0}
+.chips li{border:1px solid var(--line);border-radius:6px;padding:.15rem .6rem;font-size:.88rem}
+
+/* Achievement: timeline karena berurutan per tahun */
+.timeline{list-style:none;padding:0;border-left:3px solid var(--accent);margin-left:.4rem}
+.timeline li{padding:0 0 2rem 1.5rem;position:relative}
+.timeline li::before{content:"";position:absolute;left:-.62rem;top:.45rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--signal);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--accent)}
+.timeline .year{font:700 .95rem var(--head);color:var(--accent)}
+.timeline h3{font:700 1.3rem var(--head)}
+.timeline .org{color:var(--muted);font-size:.95rem;margin-bottom:.3rem}
+.timeline a{color:var(--accent);font-size:.95rem}
+
+/* Contact */
+.contact h2{font-size:clamp(2.5rem,8vw,5rem)}
+.contact ul{list-style:none;padding:0;display:grid;gap:.75rem;max-width:520px;margin:1.5rem 0 2rem}
+.contact li a{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;text-decoration:none}
+.contact li a span:first-child{color:var(--muted)}
+.contact li a:hover{border-color:var(--accent)}
+footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:720px){
+  .about{grid-template-columns:1fr}
+  .photo{width:160px;height:190px}
+  nav a.link{display:none}
+  section{padding:3.25rem 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Mohammad Noor Muchsin Ilham</a>
+    <a class="link" href="#about">About</a>
+    <a class="link" href="#skills">What I Can Do</a>
+    <a class="link" href="#achievement">Achievement</a>
+    <a class="link" href="#contact">Contact</a>
+    <button id="theme" type="button" aria-label="Ganti tema terang atau gelap">Gelap</button>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <h1><span>Mohammad Noor</span><span class="second">Muchsin Ilham</span></h1>
+    <p class="tag">Mahasiswa Sistem Informasi yang suka mengubah masalah sehari-hari menjadi sistem yang rapi dan mudah dipakai.</p>
+    <div class="btns">
+      <a class="btn primary" href="#contact">Hubungi saya</a>
+      <a class="btn" href="#achievement">Lihat pencapaian</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT ME -->
+<section id="about">
+  <div class="wrap">
+    <h2>About Me</h2>
+    <div class="about">
+     <div class="photo">
+  <img src="foto.jpeg" alt="Foto Mohammad Noor Muchsin Ilham">
+</div>
+      <div>
+        <p>Saya mahasiswa S1 Sistem Informasi yang sedang belajar pemrograman, basis data, dan analisis sistem. Saya senang mengerjakan proyek kecil yang bisa langsung dipakai.</p>
+        <dl>
+          <dt>Nama</dt><dd>Mohammad Noor Muchsin Ilham</dd>
+          <dt>NIM</dt><dd>26051214266</dd>
+          <dt>Prodi</dt><dd>S1 Sistem Informasi</dd>
+          <dt>Pendidikan</dt><dd>Universitas Negeri Surabaya, angkatan 2026</dd>
+          <dt>Aktivitas</dt><dd>Belajar Python dan Web dasar</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I CAN DO -->
+<section id="skills">
+  <div class="wrap">
+    <h2>What I Can Do</h2>
+    <div class="skills">
+      <article class="skill">
+        <h3>Pemrograman dan web</h3>
+        <p>Menulis program dasar dan membuat halaman web statis yang responsif.</p>
+        <ul class="chips"><li>Python</li><li>HTML</li></ul>
+      </article>
+      <article class="skill">
+        <h3>Tools kerja</h3>
+        <p>Memakai alat bantu untuk menulis kode, berkolaborasi, dan menyusun dokumen.</p>
+        <ul class="chips"><li>VS Code</li><li>Git</li><li>GitHub</li><li>Command line</li><li>Tools AI</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENT -->
+<section id="achievement">
+  <div class="wrap">
+    <h2>Achievement</h2>
+    <ol class="timeline">
+      <li>
+  <span class="year">2025</span>
+  <h3>Juara 1 Lomba Drumband</h3>
+  <p class="org">SMA Taruna Creative Camp (STCC) Jawa Timur</p>
+  <p>Meraih juara pertama dalam lomba drumband tingkat Jawa Timur.</p>
+</li>
+      <li>
+  <span class="year">2026</span>
+  <h3>Gemini Certified Student (University)</h3>
+  <p class="org">Google for Education</p>
+  <p>Kualifikasi yang menunjukkan pengetahuan, keterampilan, dan kompetensi dasar untuk menggunakan Google AI. Terbit 3 Oktober 2026, berlaku sampai 3 Oktober 2029.</p>
+  <a href="sertifikat-gemini.pdf" target="_blank" rel="noopener">Lihat sertifikat</a>
+</li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Mari bekerja sama</h2>
+    <p>Terbuka untuk kolaborasi proyek, magang, dan diskusi seputar sistem informasi.</p>
+    <ul>
+      <li><a href="mailto:rexqillerzon@gmail.com"><span>Email</span><span>rexqillerzon@gmail.com</span></a></li>
+      <li><a href="https://github.com/mnoor07" target="_blank" rel="noopener"><span>GitHub</span><span>github.com/mnoor07</span></a></li>
+      <li><a href="https://www.linkedin.com/in/mohammad-noor-muchsin-ilham-5a19b4440" target="_blank" rel="noopener"><span>LinkedIn</span><span>linkedin.com/in/mohammad-noor-muchsin-ilham-5a19b4440</span></a></li>
+    </ul>
+    <div class="btns">
+      <a class="btn primary" href="mailto:rexqillerzon@gmail.com">Kirim pesan</a>
+      <!-- Taruh file CV di folder yang sama, lalu ganti nama file -->
+      <a class="btn" href="cv.pdf" target="_blank" rel="noopener">Lihat CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Mohammad Noor Muchsin Ilham. Hak cipta dilindungi.</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  function set(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'Terang':'Gelap';}
+  var dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  set(dark?'dark':'light');
+  btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+})();
+</script>
+</body>
+</html>
